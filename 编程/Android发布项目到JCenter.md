@@ -1,5 +1,3 @@
-## Android发布项目到JCenter
-
 ### JCenter是什么
 
 大家应该都用过各种各样的Github上的第三方开源组件。类似这种效果的
@@ -73,8 +71,8 @@ bintray.user=YOUR_BINTRAY_USERNAME
 bintray.apikey=YOUR_BINTRAY_API_KEY
 ```
 
-- YOUR_BINTRAY_USERNAME是你在 https://bintray.com/ 的用户名
-- YOUR_BINTRAY_API_KEY是你在 https://bintray.com/ 的API_KEY（点击右上角用户名->your profile->edit ->Api Key）
+- `YOUR_BINTRAY_USERNAME`是你在 https://bintray.com/ 的用户名
+- `YOUR_BINTRAY_API_KEY`是你在 https://bintray.com/ 的 `API_KEY`（点击右上角用户名->your profile->edit ->Api Key）
 
 **2. 打开本地Project的gradel文件，dependencies节点下添加一些插件**
 
@@ -122,8 +120,8 @@ apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.
 
 |参数|说明|
 |---|---|
-|bintrayRepo|https://bintray.com/ 下的仓库名|
-|bintrayName|https://bintray.com/ 仓库下的项目名|
+|bintrayRepo|`https://bintray.com/` 下的仓库名|
+|bintrayName|`https://bintray.com/` 仓库下的项目名|
 |publishedGroupId|Model Package Name|
 |libraryName|Model Application/Library name（没啥用）|
 |artifact|Model 名|
@@ -135,7 +133,7 @@ apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.
 compile 'publishedGroupId:artifact:libraryVersion'
 ```
 
-#### 第四步：发布项目到Maven及JCenter
+#### 第四步：发布项目
 
 **1. 执行**
 
