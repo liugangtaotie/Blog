@@ -60,7 +60,7 @@ public class ToastUtil {
 
 **注意：为了详细的演示与讲解，我们使用上述方式二进行配置，并且为了区分Bintray上的Name跟Github默认的项目名，Bintray Name我们设置的不是Github默认的DemoForJCenter，而使用的是 DemoForJCenterName 。如下图。(但是建议：设置为Github默认的)**
 
-![截图](https://wangyuchao.oss-cn-beijing.aliyuncs.com/blog/program/Android%E5%8F%91%E5%B8%83%E9%A1%B9%E7%9B%AE%E5%88%B0JCenter.jpg)
+![截图](https://wangyuchao.oss-cn-beijing.aliyuncs.com/blog/program/android-jcenter.jpg)
 
 #### 第三步：本地配置
 
