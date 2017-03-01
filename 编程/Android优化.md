@@ -104,7 +104,7 @@ public class Activity {
 - [下载地址](http://www.eclipse.org/mat/downloads.php)
 - 首先将 .hprof 文件导出为标准文件 ,然后使用 MAT 打开,选择 `leak suspect report` ,
 
-![hprof文件分析](http://wangyuchao.oss-cn-beijing.aliyuncs.com/blog/program/android-hprof4.png)
+![hprof文件分析](https://wangyuchao.oss-cn-beijing.aliyuncs.com/blog/program/android-hprof4.png)
 
 ![MAT](https://wangyuchao.oss-cn-beijing.aliyuncs.com/blog/program/android-mat.png)
 
