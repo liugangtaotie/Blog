@@ -2,7 +2,7 @@ Android中的Handler机制，每次整理都会有新的发现。
 
 ### 常见用法
 
-- **方式一:send**
+**方式一:send**
 
 查看源码我们会发现，无论是 `handler.sendXXX` 还是 `message.sendXXX` 最后都会调用
 
@@ -10,7 +10,7 @@ Android中的Handler机制，每次整理都会有新的发现。
 handler.sendMessageAtTime(Message msg, long uptimeMillis)
 ```
 
-- **方式二:post**
+**方式二:post**
 
 查看源码我们会发现，所有的 `handler.postXXX` 方法 都是先通过 
 
@@ -24,7 +24,7 @@ handler.getPostMessage(Runnable r)
 handler.sendMessageAtTime(Message msg, long uptimeMillis)
 ```
 
-- **方式三：looper(官方推荐)**
+**方式三：looper(官方推荐)**
 
 ```
     class LooperThread extends Thread {
