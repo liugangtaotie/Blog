@@ -86,7 +86,7 @@ public class Activity {
 
 - **资源未关闭**:对于使用了 Receiver Stream Observer File Cursor 等资源，应该在Activity销毁时及时关闭或者注销，回收内存。
 
-## Android Monitors
+### Android Monitors
 
 ![Monitors](https://wangyuchao.oss-cn-beijing.aliyuncs.com/blog/program/android-monitor.png)
 
@@ -100,7 +100,7 @@ public class Activity {
 
 那么我们怎么才能发现内存泄露呢？这只是显示了一些基础的保留堆栈、总栈、层次、深度之类的参数，我们只能分析比较浅显容易看出来的内存泄露，比如某一个Bitmap占用了大量的内存，然后就可以 `jump to source` 。如果想要详细分析应用内存，这时就需要用到MAT了。
 
-## MAT 分析跟踪
+### MAT 分析跟踪
 - [下载地址](http://www.eclipse.org/mat/downloads.php)
 - 首先将 .hprof 文件导出为标准文件 ,然后使用 MAT 打开,选择 `leak suspect report` ,
 
@@ -126,7 +126,7 @@ public class Activity {
 
 **以上都仅仅是比较简单的用法，MAT的更多功能只能慢慢探索。**
 
-## LeakCanary
+### LeakCanary
 
 如果你厌倦了上述的检测内存泄露的繁琐方式，那么现在有个开源类库[LeakCanary](https://github.com/square/leakcanary)，可以直接让内存泄露无所遁形。
 
