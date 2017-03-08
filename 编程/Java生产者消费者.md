@@ -1,8 +1,16 @@
-## Java生产者消费者
+### Java生产者消费者
 生产者消费者问题是一个著名的线程同步问题，该问题描述如下：有一个生产者在生产产品，这些产品将提供给若干个消费者去消费，为了使生产者和消费者能并发执行，在两者之间设置一个具有多个缓冲区的缓冲池，生产者将它生产的产品放入一个缓冲区中，消费者可以从缓冲区中取走产品进行消费，显然生产者和消费者之间必须保持同步，即不允许消费者到一个空的缓冲区中取产品，也不允许生产者向一个已经放入产品的缓冲区中再次投放产品。
 
+### 基本同步方式
+
+- synchronized 方法：给静态方法加锁是锁这个类 给非静态方法加锁是锁对象
+- synchronized 代码块
+- Lock lock = new ReentrantLock() 加锁
+- 使用Java提供的一些线程安全的类
+
+
 ### lock-unlock(Condition)
-```java
+```
 import java.util.PriorityQueue;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
@@ -89,8 +97,7 @@ public class Test {
 }
 ```
 
-
-### wait-notify
+### synchronized(wait-notify)
 
 ```java
     /*消费者 */
