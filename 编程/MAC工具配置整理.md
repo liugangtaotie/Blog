@@ -1,10 +1,18 @@
 ### MAC配置整理
 
-- 树形显示当前文件夹
+- 树形显示
 ```
+方法一：（当前目录）
 > vim .bash_profile
 > 添加 alias tree="find . -print | sed -e 's;[^/]*/;|---;g;s;---|;   |;g'"
 > source .bash_profile
+方法二：（推荐）
+> brew install tree
+> 乱码 -N
+> 目录 -d
+> 层数 -L 2
+> 忽略 -I *.json
+> 更多 -help
 ```
 
 - 显示隐藏文件
