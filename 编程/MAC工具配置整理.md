@@ -1,5 +1,12 @@
 ### MAC配置整理
 
+- 树形显示当前文件夹
+```
+> vim .bash_profile
+> 添加 alias tree="find . -print | sed -e 's;[^/]*/;|---;g;s;---|;   |;g'"
+> source .bash_profile
+```
+
 - 显示隐藏文件
 ```
 > defaults write com.apple.finder AppleShowAllFiles TRUE
