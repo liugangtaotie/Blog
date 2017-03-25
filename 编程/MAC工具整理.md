@@ -12,7 +12,8 @@
 - IntelliJ Idea:Java开发利器
 - Xmind:思维导图
 - OneNote:笔记本记事
-- Atom:Github 出品文本编辑
+- Atom:Github出品文本编辑
+- Visual Studio Code:微软出品文本编辑器
 - MySqlWorkBench:MySql的可视化工具
 - Sublime Text:文本文档
 - NotePad++:文本文档
@@ -22,7 +23,7 @@
 - Axure:原型设计
 - Snip:截图
 - JProfiler:测试
-- Postman:自动化脚本
+- Postman:自动化测试利器
 - MySqlWorkbench:Mysql客户端
 - iTerms:强大的终端工具
 - Chrome浏览器
