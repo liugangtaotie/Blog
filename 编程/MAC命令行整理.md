@@ -40,7 +40,7 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
 开启apache：sudo /usr/sbin/apachectl start
 ```
 
-- Mac 终端变色
+- Mac 终端配色方案
 ```
 1.touch ~/.bash_profile
 2.open ~/.bash_profile
