@@ -1,5 +1,3 @@
-## ls
-
 ### 功能
 
 简写列出目标目录中所有的子目录和文件
@@ -111,14 +109,35 @@ LS_COLORS 环境变量可改变此设置，可使用 dircolors 命令来设置�
  2  严重问题 (例如：无法使用命令行参数)
 ```
 
-## cd
-
-cd 命令比较简单，主要用来切换目录。特殊目录如下
+### 示例
 
 ```
-cd          #系统根目录
-cd /        #系统根目录
-cd ~        #用户主目录
-cd -        #之前的目录
-cd ../      #上一级目录
+[root@bogon /]# ls -al
+总用量 110
+dr-xr-xr-x.  25 root root  4096 3月  24 12:51 .
+dr-xr-xr-x.  25 root root  4096 3月  24 12:51 ..
+-rw-r--r--.   1 root root     0 3月  24 12:51 .autofsck
+dr-xr-xr-x.   2 root root  4096 3月  29 11:28 bin
+dr-xr-xr-x.   5 root root  1024 3月  24 12:49 boot
+drwxr-xr-x.  10 root root  4096 3月  24 12:51 cgroup
+drwxr-xr-x.  21 root root  3980 3月  29 13:02 dev
+drwxr-xr-x. 117 root root 12288 3月  29 13:02 etc
+drwxr-xr-x.   4 root root  4096 3月  24 12:49 home
+dr-xr-xr-x.  10 root root  4096 3月  29 11:28 lib
+dr-xr-xr-x.  10 root root 12288 3月  29 11:28 lib64
+drwx------.   2 root root 16384 3月  24 12:43 lost+found
+drwxr-xr-x.   3 root root  4096 3月  24 12:50 media
+drwxr-xr-x.   2 root root     0 3月  24 12:51 misc
+drwxr-xr-x.   2 root root  4096 9月  23 2011 mnt
+drwxr-xr-x.   2 root root     0 3月  24 12:51 net
+drwxr-xr-x.   3 root root  4096 3月  24 12:48 opt
+dr-xr-xr-x. 131 root root     0 3月  24 12:51 proc
+dr-xr-x---.   3 root root  4096 3月  29 12:34 root
+dr-xr-xr-x.   2 root root 12288 3月  29 11:28 sbin
+drwxr-xr-x.   7 root root     0 3月  24 12:51 selinux
+drwxr-xr-x.   2 root root  4096 9月  23 2011 srv
+drwxr-xr-x.  13 root root     0 3月  24 12:51 sys
+drwxrwxrwt.   5 root root  4096 3月  29 13:02 tmp
+drwxr-xr-x.  13 root root  4096 3月  24 12:43 usr
+drwxr-xr-x.  22 root root  4096 3月  24 12:47 var
 ```
