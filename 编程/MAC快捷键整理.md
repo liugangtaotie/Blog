@@ -56,6 +56,7 @@ JetBrains开发了的一系列工具：Intellij Idea、PHPStorm、PyCharm、Ruby
 - cmd + shift + u:大小写转换
 - ctrl + t:refactor this
 - cmd + shift + j:生成方法注释（自定义）
+- cmd + shift + up/down:此行上移或者下移
 
 **导航**
 - cmd + n:新建
