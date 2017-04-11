@@ -111,6 +111,7 @@ LS_COLORS 环境变量可改变此设置，可使用 dircolors 命令来设置�
 
 ### 示例
 
+**示例一**
 ```
 [root@bogon /]# ls -al
 总用量 110
@@ -140,4 +141,26 @@ drwxr-xr-x.  13 root root     0 3月  24 12:51 sys
 drwxrwxrwt.   5 root root  4096 3月  29 13:02 tmp
 drwxr-xr-x.  13 root root  4096 3月  24 12:43 usr
 drwxr-xr-x.  22 root root  4096 3月  24 12:47 var
+```
+
+**示例二**
+```
+[root@bogon ~]# ls -al --time-style=long-iso
+总用量 128
+dr-xr-x---.  4 root root  4096 2017-04-11 10:33 .
+dr-xr-xr-x. 25 root root  4096 2017-03-24 12:51 ..
+-rw-------.  1 root root  2663 2017-03-24 12:49 anaconda-ks.cfg
+-rw-------.  1 root root  3856 2017-04-11 01:13 .bash_history
+-rw-r--r--.  1 root root    18 2009-05-20 18:45 .bash_logout
+-rw-r--r--.  1 root root   176 2009-05-20 18:45 .bash_profile
+-rw-r--r--.  1 root root   176 2004-09-23 11:59 .bashrc
+-rw-r--r--.  1 root root   100 2004-09-23 11:59 .cshrc
+-rw-r--r--.  1 root root 53675 2017-03-24 12:49 install.log
+-rw-r--r--.  1 root root 12179 2017-03-24 12:47 install.log.syslog
+-rw-------.  1 root root    43 2017-04-08 15:09 .lesshst
+-rw-------.  1 root root    32 2017-03-29 12:34 .mysql_history
+drwxr-----.  3 root root  4096 2017-03-29 11:30 .pki
+-rw-r--r--.  1 root root   129 2004-12-04 05:42 .tcshrc
+drwxr-xr-x.  2 root root  4096 2017-04-11 10:33 test
+-rw-------.  1 root root  3363 2017-04-11 10:33 .viminfo
 ```
