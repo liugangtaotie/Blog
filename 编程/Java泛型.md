@@ -139,6 +139,74 @@ HashMap<String,String>[] maps = new HashMap<String, String>[10];              //
 
 Java 中的泛型只存在于编译期，在将 Java 源文件编译完成 Java 字节代码中是不包含泛型中的类型信息的。使用泛型的时候加上的参数类型XClass，会被编译器在编译的时候去掉，全部转化为Object类型，然后再由编译器自动强制转换为传入的参数类型XClass。
 
+**下面我们分析一下字节码来验证一下这个结论**
+
+要分析的java文件如下
+
+```
+public class WipeDemo<T> {
+    private T t;
+
+    public WipeDemo(T t) {
+        this.t = t;
+    }
+
+    public T getT() {
+        return t;
+    }
+
+    public static void main(String[] args) {
+        WipeDemo<String> demo = new WipeDemo<>("Hello");
+        String string = demo.getT();
+        System.out.println(string);
+    }
+}
+```
+
+编译`javac WipeDemo.java`完成以后，使用`javap -c -s WipeDemo`查看一下字节码
+
+```
+警告: 二进制文件WipeDemo包含wang.yuchao.java.study.generic.WipeDemo
+Compiled from "WipeDemo.java"
+public class wang.yuchao.java.study.generic.WipeDemo<T> {
+  public wang.yuchao.java.study.generic.WipeDemo(T);
+    descriptor: (Ljava/lang/Object;)V
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: aload_1
+       6: putfield      #2                  // Field t:Ljava/lang/Object;
+       9: return
+
+  public T getT();
+    descriptor: ()Ljava/lang/Object;
+    Code:
+       0: aload_0
+       1: getfield      #2                  // Field t:Ljava/lang/Object;
+       4: areturn
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    Code:
+       0: new           #3                  // class wang/yuchao/java/study/generic/WipeDemo
+       3: dup
+       4: ldc           #4                  // String Hello
+       6: invokespecial #5                  // Method "<init>":(Ljava/lang/Object;)V
+       9: astore_1
+      10: aload_1
+      11: invokevirtual #6                  // Method getT:()Ljava/lang/Object;
+      14: checkcast     #7                  // class java/lang/String
+      17: astore_2
+      18: getstatic     #8                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      21: aload_2
+      22: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      25: return
+}
+```
+
+通过分析上述字节码，才得到开头类型擦除的结论。
+
 由于存在类型擦除，因此不能实例化类型变量:`new T();`、`new T[n]`、`T.class`。否则泛型T编译完成以后会直接变成Object类型。不过可以使用如下方法代替。
 
 ```
