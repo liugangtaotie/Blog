@@ -66,7 +66,7 @@ _斜体内容_
 ```
 ### 代码框 - 多行
 ```
-//三个反引号+语言名「```java」
+//三个反引号+语言名「```」
 public static void main(String args){
 	System.out.println("Hello,world");
 }

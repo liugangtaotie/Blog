@@ -99,7 +99,7 @@ public class Test {
 
 ### synchronized(wait-notify)
 
-```java
+```
     /*消费者 */
     public class Consumer implements Runnable {
         private Vector vector;

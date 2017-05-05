@@ -37,7 +37,7 @@ allprojects {
 	- 根据 Application/Library name 可以自动生成 Model Package Name 为 `wang.yuchao.demoforjcenterlibrary`
 	- 我们在此 Model 下面新建一个类 ToastUtil.java 用来测试
 
-```java
+```
 package wang.yuchao.demoforjcenterlibrary;
 
 import android.content.Context;

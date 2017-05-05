@@ -3,14 +3,15 @@
 之前好像没有系统的整理过枚举的用法，最近发现枚举的用法还是蛮灵活的，重新学习记录一下。
 
 ### 常量
-```java
+
+```
 public enum Color {
     RED, BLACK, WHITE
 }
 ```
 
 ### 实体类
-```java
+```
 public enum Color {
     BLACK("黑色", 0x000000),
     WHITE("白色", 0xFFFFFF),
@@ -66,7 +67,7 @@ public enum Color {
 
 **使用接口达到复用的效果**
 
-```java
+```
 public interface ColorInterface {
     void showBlack();
     void showWhite();
@@ -75,7 +76,8 @@ public interface ColorInterface {
 ```
 
 ### 抽象类
-```java
+
+```
 public enum Color {
     BLACK {
         @Override

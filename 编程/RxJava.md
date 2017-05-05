@@ -23,7 +23,7 @@ RxJava
 1. Web前端可能用的比较多（输入、验证码）
 2. 用比较通用的举例说明
 
-```java
+```
 a = b + c;
 ```
 
@@ -54,7 +54,7 @@ a library for composing asynchronous and event-based programs using observable s
 
 ##### 接口实现
 
-```java
+```
     Observer<Student> observer = new Observer<Student>() {
         @Override
         public void onCompleted() {
@@ -77,7 +77,7 @@ a library for composing asynchronous and event-based programs using observable s
 ##### Subscriber
 **实现了 Observer 接口的抽象类。使用Observer到最后也会转换为Subscriber**
 
-```java
+```
     Subscriber<Student> subscriber = new Subscriber<Student>() {
         @Override
         public void onCompleted() {
@@ -104,7 +104,7 @@ a library for composing asynchronous and event-based programs using observable s
 #### Observable
 **可观察者（被观察者）对象：它决定什么时候触发事件以及触发怎样的事件**
 
-```java
+```
     Observable<Student> observable = Observable.create(new Observable.OnSubscribe<Student>() {
         @Override
         public void call(Subscriber<? super Student> subscriber) {
@@ -118,7 +118,7 @@ a library for composing asynchronous and event-based programs using observable s
 
 **上述代码等同于**
 
-```java
+```
         Observable.just(
                 new Student(1, "Name1"),
                 new Student(2, "Name2"),
@@ -127,7 +127,7 @@ a library for composing asynchronous and event-based programs using observable s
 
 **也等同于**
 
-```java
+```
         Student[] students = {
                 new Student(1, "Name1"),
                 new Student(2, "Name2"),
@@ -138,7 +138,7 @@ a library for composing asynchronous and event-based programs using observable s
 #### subscribe 订阅
 **使用下面这行代码，就能启动了**
 
-```java
+```
         observable.subscribe(observer);
         //或者
         observable.subscribe(subscriber);
@@ -146,7 +146,7 @@ a library for composing asynchronous and event-based programs using observable s
 
 **还可以这么使用**
 
-```java
+```
 // 自动创建 Subscriber ，并使用 onNextAction 来定义 onNext()
 observable.subscribe(onNextAction);
 // 自动创建 Subscriber ，并使用 onNextAction 和 onErrorAction 来定义 onNext() 和 onError()
@@ -157,7 +157,7 @@ observable.subscribe(onNextAction, onErrorAction, onCompletedAction);
 
 **我们以最后一个方法为例**
 
-```java
+```
         observable.subscribe(
                 new Action1<Student>() {
                     @Override
@@ -193,7 +193,7 @@ observable.subscribe(onNextAction, onErrorAction, onCompletedAction);
 - subscribeOn();// 可观察者 Observable 的回调方法发生的线程
 - observeOn();// 观察者 subscriber 的回调方法发生的线程
 
-```java
+```
         // 被观察者要注册到观察者1，2，3中
         Observable
                 // 创建 Observable 可观察者
@@ -231,7 +231,7 @@ observable.subscribe(onNextAction, onErrorAction, onCompletedAction);
 
 - 没有使用Map的写法
 
-```java
+```
         Student students[] = new Student[5];
         Observable
                 .from(students)
@@ -244,7 +244,7 @@ observable.subscribe(onNextAction, onErrorAction, onCompletedAction);
 
 - 使用Map的写法
 
-```java
+```
         Student students[] = new Student[N];
         Observable
                 .from(students)
@@ -271,7 +271,7 @@ observable.subscribe(onNextAction, onErrorAction, onCompletedAction);
 
 - 常规写法
 
-```java
+```
         Student students[] = new Student[N];
         Observable
                 .from(students)
@@ -291,7 +291,7 @@ observable.subscribe(onNextAction, onErrorAction, onCompletedAction);
 
 - flapMap写法
 
-```java
+```
         Observable
                 .from(students)
                 .flatMap(new Func1<Student, Observable<Course>>() {

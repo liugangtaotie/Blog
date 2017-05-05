@@ -6,6 +6,7 @@ AndroidStuio创建工程完成以后，src目录下会有三个文件夹，andro
 - AndroidStudio 2.0.0
 
 ### 依赖
+
 ```
 apply plugin: 'com.android.application'
 
@@ -74,6 +75,6 @@ dependencies {
 
 http://developer.android.com/training/testing/ui-testing/espresso-testing.html
 
-```java
+```
 Espresso.onView(ViewMatchers.withText("Hello,World!")).check(ViewAssertions.matches(ViewMatchers.isDisplayed()));
 ```

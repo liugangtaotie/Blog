@@ -12,7 +12,7 @@
 ### 简单工厂
 - 选择实现
 
-```java
+```
 public interface Api {
     public void operation(String s);
 }
@@ -52,7 +52,7 @@ public class Client {
 ### 外观模式
 - 封装交互，简化调用
 
-```java
+```
 public class Facade {
     public void test() {
         AModuleApi a = new AModuleImpl();
@@ -74,7 +74,7 @@ public class Client {
 ### 适配器模式
 - 匹配转换，复用功能
 
-```java
+```
     public class Adaptee {
         public void originalMethod() {
         }
@@ -109,7 +109,7 @@ public class Client {
 
 ### 单例模式
 
-```java
+```
     public class Singleton {
         private static Singleton instance = null;
 
@@ -127,7 +127,7 @@ public class Client {
 
 ### 建造者模式
 
-```java
+```
     public interface Builder {
         public void buildPartA();
 
@@ -187,7 +187,7 @@ public class Client {
 ### 中介者模式
 - 根据名字显而易见，作为两个对象的中介，A,B,C,D,E互相不认识，但是需要互相联系，因此只要认识中介X就行了，也就是由网状图结构变为星射线结构。
 
-```java
+```
 //同事抽象类
 public abstract class Colleague {
     private Mediator mediator;
@@ -286,7 +286,7 @@ public class ConcreteMediator implements Mediator {
 ### 观察者模式
 - 动态联动，广播通信
 
-```java
+```
     public interface Observer {
         public void update(Subject subject);
     }
@@ -347,7 +347,7 @@ public class ConcreteMediator implements Mediator {
 ### 代理模式
 - 控制对象访问
 
-```java
+```
 //================普通代理================
     public interface Subject {
         public void operation();
@@ -425,7 +425,7 @@ public class ConcreteMediator implements Mediator {
 ### 命令模式
 - 封装请求
 
-```java
+```
     public interface Command {
         public void execute();
     }
@@ -479,7 +479,7 @@ public class ConcreteMediator implements Mediator {
 ### 组合模式
 - 统一叶子对象和组合对象
 
-```java
+```
     //组件类
     public abstract class Component {
         public abstract void someOperation();
@@ -560,7 +560,7 @@ public class ConcreteMediator implements Mediator {
 ### 模板方法模式
 - 固定算法骨架
 
-```java
+```
     public abstract class Templete {
         public void beforeOperation() {}
 
@@ -592,7 +592,7 @@ public class ConcreteMediator implements Mediator {
 - 分离算法，选择实现
 - 最典型的例子就是：根据会员的级别，进行不同程度的折扣
 
-```java
+```
     public class Context {
         private Strategy strategy;
 
@@ -641,7 +641,7 @@ public class ConcreteMediator implements Mediator {
 ### 装饰者模式
 - 动态结合
 
-```java
+```
     //组件对象
     public interface Component {
         public abstract void operation();

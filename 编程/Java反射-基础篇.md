@@ -15,7 +15,7 @@
 
 ### 简单使用
 
-```java
+```
 public class ReflectModelSuper {
     boolean xx;
     public int aa;
@@ -24,7 +24,7 @@ public class ReflectModelSuper {
 }
 ```
 
-```java
+```
 public class ReflectModel extends ReflectModelSuper implements ReflectModelInterface, ReflectModelInterface2 {
 
     public int a;
@@ -86,7 +86,7 @@ public class ReflectModel extends ReflectModelSuper implements ReflectModelInter
 
 **实现**
 
-```java
+```
 package wang.yuchao.java.study.reflect;
 
 import java.lang.reflect.Constructor;
