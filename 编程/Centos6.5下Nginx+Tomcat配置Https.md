@@ -140,7 +140,7 @@ service nginx stop
 - **密钥:可省略**
 ```
 # Nginx 默认使用 Diffiel-Hellman 1024 位交换密钥，为了更加安全我们换成2048（不推荐 4096 耗时耗资源）
-cd etc/letsencrypt/live/{domain}/        # 进入证书目录
+cd /etc/letsencrypt/live/{domain}/        # 进入证书目录
 openssl dhparam -out dh2048.pem 2048     # 生成dh2048.pem
 ```
 
