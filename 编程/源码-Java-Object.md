@@ -45,6 +45,13 @@ protected void finalize() throws Throwable {}
 return (this == obj);
 ```
 
+**特性**
+
+1. 自反性：对于非空对象x,x.equals(x)为true
+2. 对称性：x.equals(y) == y.equals(x)
+3. 传递性：
+4. 一致性：
+
 ### toString
 
 
