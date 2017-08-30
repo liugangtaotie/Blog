@@ -37,6 +37,8 @@ protected void finalize() throws Throwable {}
 2. 如果两个对象的equals方法为true，那么这两个对象的hashCode必须相同
 3. 如果两个对象的hashCode方法一样，那么这两个对象的equals方法不一定为true
 
+具体应用可参考HashMap源码
+
 ### equals
 
 比较两个对象是否相等。默认实现，即比较2个对象的内存地址。
@@ -104,11 +106,37 @@ public String toString() {
 }
 ```
 
+### 监视器
+
+顾名思义，监听对象操作，主要是协调当前对象多线程之间的执行顺序。监视器是一种多线程的同步结构。
+
+可以将监视器看做一个包含特殊对象的特殊房间，一次只能被一个线程占用。主要有以下几种操作
+
+1. 进入监视器
+2. 获取监视器
+3. 拥有监视器
+4. 释放监视器
+5. 退出监视器
+
+每个对象默认都绑定了一个监视器，具体有以下三种方法。
+
+```
+wait()      // 获取监视器
+notify()    // 释放监视器
+notifyAll() // 释放所有监视器
+```
+
+### 锁
+
+实现监视器的具体方式，即协调多线程之间执行顺序、实现多线程同步的具体方式。相当于上一小节中进入监视器和退出监视器的具体实现。
+
+加锁的方式有以下几种
+
+1. 使用 synchronized （wait-notify）
+2. 使用 Lock （信号量机制）
+3. 静态同步方法
+
 ### wait
-
-**监视器**
-
-**锁**
 
 让当前线程T等待，并释放该对象的锁，该线程T不可用且处于休眠状态，直到发生下面四种情况之一
 
@@ -119,21 +147,15 @@ public String toString() {
 
 ### notify
 
-唤醒在此对象锁上等待的线程，如果有多个线程等待，那么会随机任意选择一个线程。
+唤醒在此对象监视器上等待的线程，如果有多个线程等待，那么会随机任意选择一个线程。
 
-notify方法只能被给对象加锁的线程来调用。一个线程要给对象加锁，可以使用以下3种方法：
+**需要注意**
 
-1. 执行对象的
-2. 使用synchronized内置锁
-3. 对于Class类型的对象，执行同步静态方法
-
-一次只能有一个线程拥有对象的监视器。
-
-如果当前线程不是此对象监视器的所有者的话会抛出IllegalMonitorStateException异常
+notify方法只能被拥有此对象监视器的所有者的线程来调用，一次只能有一个线程拥有该对象的监视器，一个对象加锁以后即变成为对象监视器的所有者，如果当前线程不是此对象监视器所有者调用的话会抛出IllegalMonitorStateException异常。
 
 ### notifyAll
 
-唤醒在此对象锁上等待的所有线程
+唤醒此对象监视器上等待的所有线程。
 
 ### finalize
 
@@ -142,6 +164,8 @@ notify方法只能被给对象加锁的线程来调用。一个线程要给对�
 ## 参考
 
 - https://fangjian0423.github.io/2016/03/12/java-Object-method/
-- http://www.cnblogs.com/xdp-gacl/p/3636990.html
+- https://gxnotes.com/article/50682.html
 - https://gxnotes.com/article/35146.html
-
+- https://www.kancloud.cn/digest/java-thread/107456
+- http://www.jianshu.com/p/3e06033b0326
+- http://www.cnblogs.com/keeplearnning/p/7020287.html
