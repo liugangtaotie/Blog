@@ -108,10 +108,14 @@ List<Object> list = new ArrayList<String>();  // 错误，不可赋值
 
 **<T extends XClass>与<? extends XClass>区别**
 
+1. `T` 是泛型 `?` 是通配符
+2. `T` 可以进行某些判断以及操作 `?`后续使用时可以是任意的
+3. `T` 用于筛选符合要求的某种类型 `?` 用于筛选未知的某种类型
+
 ```
-<T extends XClass>  // 解决类型声明边界问题
-<? extends XClass>  // 解决方法参数传递问题
-<? super XClass>    // 注意:没有<T super XClass>
+<T extends XClass>  // XClass以及自身的任一子类（ 注意:没有<T super XClass>）
+<? extends XClass>  // 解决类型边界问题，上边界通配符，XClass 可以是泛型 T
+<? super XClass>    // 解决类型边界问题，下边界通配符，XClass 可以是泛型 T 
 ```
 
 **super**: `<? super XClass>` 只能是XClass类以及XClass的父类。
@@ -124,6 +128,83 @@ List<Object> list = new ArrayList<String>();  // 错误，不可赋值
         collection = new ArrayList<Integer>();
         return collection;
     }
+```
+
+**范例如下**
+
+```
+public class DemoForT {
+
+    // 食物
+    public static class Food {
+    }
+
+    // 水果
+    public static class Fruit extends Food {
+    }
+
+    // 苹果
+    public static class Apple extends Fruit {
+    }
+
+    // 盘子
+    public static class Plate<T> {
+        private T t;
+
+        public Plate(T t) {
+            this.t = t;
+        }
+
+        public T getT() {
+            return t;
+        }
+
+        public void setT(T t) {
+            this.t = t;
+        }
+
+        // 参数传递：打印新盘子的东西 T 或 T 的子类
+        public void print1(Plate<? extends T> newPlate) {
+            System.out.println(newPlate.t);
+        }
+
+        // 参数传递：打印新盘子的东西 T 或 T 的父类
+        public void print2(Plate<? super T> newPlate) {
+            System.out.println(newPlate.t);
+        }
+
+    }
+
+    public static void main(String[] args) {
+        Food food = new Food();
+
+        Fruit fruit = new Fruit();
+
+        Apple apple = new Apple();
+
+        // 通配符
+        Plate<?> a = new Plate<>(food);
+        Plate<?> b = new Plate<>(fruit);
+        Plate<?> c = new Plate<>(apple);
+
+        // Fruit 的任意子类
+        Plate<? extends Fruit> plate1 = new Plate<>(apple);
+
+        // Fruit 的任意父类
+        Plate<? super Fruit> plate2 = new Plate<>(food);
+
+        // 参数传递
+        Plate<Fruit> plate3 = new Plate<>(fruit);
+
+        // 传递 Fruit 的任一子类
+        plate3.print1(plate1);       // success
+        // plate3.print1(plate2);    // error
+
+        // 传递 Fruit 的任一父类
+        // plate3.print2(plate1);    // error
+        plate3.print2(plate2);       // success
+    }
+}
 ```
 
 ### 数组
@@ -217,3 +298,4 @@ T [] arrays = (T[]) new Object[N];
 
 - [博客园](http://www.cnblogs.com/absfree/p/5270883.html)
 - [Java核心技术](https://book.douban.com/subject/3146174/)
+- [知乎](https://www.zhihu.com/question/20400700/answer/117464182?utm_source=qq&utm_medium=social)
