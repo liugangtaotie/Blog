@@ -202,7 +202,7 @@ System.out.println(str5.intern() == str6.intern()); // true
 
 ## AbstractStringBuilder
 
-除了CharSequence里面的方法外，还有如下方法
+抽象类，除了CharSequence里面的方法外，还有如下方法
 
 ```
 public int capacity() {...}
@@ -252,12 +252,88 @@ public static Character valueOf(char c) // 有128的缓存
 public static int hashCode(char value) {return (int)value;}
 public static boolean isValidCodePoint(int codePoint) // 是否合法Unicode码（0 to 10FFFF）
 public static boolean isBmpCodePoint(int codePoint) // 判断一个Unicode码值是不是属于基本多语言平面
-public static boolean isSupplementaryCodePoint(int codePoint) 
-public static boolean isHighSurrogate(char ch) 
+public static boolean isSupplementaryCodePoint(int codePoint) // 判断一个Unicode码值是否是补充字符
+public static boolean isHighSurrogate(char ch) // 判断一个字符是不是高位(开始)代理字符
+public static boolean isLowSurrogate(char ch) // 判断一个字符是不是低位(或尾部)代理字符
+public static boolean isSurrogate(char ch) // 判断一个字符是不是代理字符
+public static boolean isSurrogatePair(char high, char low) 
+public static int charCount(int codePoint) // 返回指定Unicode码值的字符个数
+public static int toCodePoint(char high, char low) // 转换代理对为Unicode码值
+public static int codePointAt(CharSequence seq, int index) // 返回字符数组或字符序列指定位置的Unicode码值
+public static int codePointAt(char[] a, int index, int limit) 
+public static int codePointBefore(CharSequence seq, int index) // 返回字符数组或字符序列指定位置前的Unicode码值 
+public static int codePointBefore(char[] a, int index, int start) 
+public static char highSurrogate(int codePoint) // 返回Unicode码值的高位(开始)代理字符
+public static char lowSurrogate(int codePoint) // 返回补充字符Unicode码值的结尾代理
+public static int toChars(int codePoint, char[] dst, int dstIndex) 
+public static char[] toChars(int codePoint) // 转换指定Unicode码值为UTF-16表示，保存到字符数组
+public static int codePointCount(CharSequence seq, int beginIndex, int endIndex) 
+public static int codePointCount(char[] a, int offset, int count) // 返回字符序列或字符数组的Unicode码值的个数 
+public static int offsetByCodePoints(CharSequence seq, int index, int codePointOffset) // 返回字符数组或字符序列中指定Unicode码值位置的索引  
+public static boolean isLowerCase(char ch) // 	判断一个字符或Unicode码值是不是小写字符
+public static boolean isLowerCase(int codePoint) 
+public static boolean isUpperCase(char ch) 
+public static boolean isUpperCase(int codePoint) 
+public static boolean isTitleCase(char ch) // 	判断字符是不是一个titlecase字符
+public static boolean isTitleCase(int codePoint) 
+public static boolean isDigit(char ch) 
+public static boolean isDigit(int codePoint) 
+public static boolean isDefined(char ch) 
+public static boolean isDefined(int codePoint) 
+public static boolean isLetter(char ch) 
+public static boolean isLetter(int codePoint) 
+public static boolean isLetterOrDigit(char ch)
+public static boolean isLetterOrDigit(int codePoint) 
+public static boolean isAlphabetic(int codePoint) // 判断一个Unicode码值是不是字母表
+public static boolean isIdeographic(int codePoint) // 判断一个字符是不是一个象形文字
+public static boolean isJavaIdentifierStart(char ch)
+public static boolean isJavaIdentifierStart(int codePoint)
+public static boolean isJavaIdentifierPart(char ch)
+public static boolean isJavaIdentifierPart(int codePoint)
+public static boolean isUnicodeIdentifierStart(char ch)
+public static boolean isUnicodeIdentifierStart(int codePoint)
+public static boolean isUnicodeIdentifierPart(char ch)
+public static boolean isUnicodeIdentifierPart(int codePoint)
+public static boolean isIdentifierIgnorable(char ch)
+public static boolean isIdentifierIgnorable(int codePoint)
+public static char toLowerCase(char ch)
+public static int toLowerCase(int codePoint)
+public static char toUpperCase(char ch)
+public static int toUpperCase(int codePoint)
+public static char toTitleCase(char ch)
+public static int toTitleCase(int codePoint)
+public static int digit(char ch, int radix) // 返回指定字符或Unicode码值指定进制的数字值
+public static int digit(int codePoint, int radix)
+public static int getNumericValue(char ch) // 返回字符的数字值
+public static int getNumericValue(int codePoint)
+public static boolean isSpace(char ch)
+public static boolean isSpaceChar(char ch) // 判断一个字符或Unicode码值是不是一个Unicode空白
+public static boolean isSpaceChar(int codePoint)
+public static boolean isWhitespace(char ch) // 	判断字符或Unicode码值是不是一个空格
+public static boolean isWhitespace(int codePoint)
+public static boolean isISOControl(char ch)
+public static boolean isISOControl(int codePoint)
+public static int getType(char ch) // 返回表示字符所属分类的值
+public static int getType(int codePoint)
+public static char forDigit(int digit, int radix) // 返回指定数字的指定进制的字符表示
+public static byte getDirectionality(char ch) // 返回指定字符或Unicode码值的Unicode方向属性
+public static byte getDirectionality(int codePoint)
+public static boolean isMirrored(char ch) // 判断一个字符或Unicode码值是否有配对的字符
+public static boolean isMirrored(int codePoint)
+public static int compare(char x, char y) // 比较两个字符
+public static char reverseBytes(char ch) // 返回指定字符的相反顺序字节组成的字符
+public static String getName(int codePoint)
 ```
+
+## CharBuffer
+
+抽象类，char缓冲类，字符缓冲区
+
+## Segment
+
+表示文本片段的字符数组的 segment。尽管能够直接访问数组，也应将其视为不可变的。此实现提供了对文本片段的快速访问，而且不存在来回复制字符的开销。它实际上是一个未受保护的 String。
 
 ## 参考
 
 - Java源码
-- http://www.jianshu.com/p/799c4459b808
-- http://www.howsoftworks.net/javaapi/java.lang/character_issurrogate.html
+- http://tool.oschina.net/apidocs/apidoc?api=jdk-zh
