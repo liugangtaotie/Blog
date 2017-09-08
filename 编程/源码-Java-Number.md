@@ -1,0 +1,7 @@
+## Number
+
+## Integer
+
+## Long
+
+## Double 
