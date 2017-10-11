@@ -91,7 +91,7 @@ public class DemoForStringPlus {
 }
 ```
 
-我们看看字节码
+我们看看字节码 `javap -c DemoForStringPlus`
 
 ```
 Compiled from "DemoForStringPlus.java"
