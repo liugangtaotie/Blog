@@ -1,11 +1,17 @@
-<mxfile host="app.diagrams.net" modified="2023-07-18T00:39:53.751Z" agent="Mozilla/5.0 (iPhone; CPU iPhone OS 15_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/115.0.5790.84 Mobile/15E148 Safari/604.1" etag="X1pr83cFMUhvcxgemJ7n" version="21.6.2" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2023-07-18T00:40:10.173Z" agent="Mozilla/5.0 (iPhone; CPU iPhone OS 15_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/115.0.5790.84 Mobile/15E148 Safari/604.1" etag="ZVZ2C32pUxSr0XAorAdt" version="21.6.2" type="github" pages="2">
   <diagram name="Page-1" id="Wpa4r2qsWul9hfvkaEKu">
     <mxGraphModel dx="633" dy="196" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="RqeaxDmkcFb-G47zrGvA-2" value="" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="Dk4hTqMW0MozDyjW0iFj-1" target="RqeaxDmkcFb-G47zrGvA-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="Dk4hTqMW0MozDyjW0iFj-1" value="数据子系统" style="whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
           <mxGeometry x="197" y="28" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RqeaxDmkcFb-G47zrGvA-1" value="数据子系统" style="whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="197" y="208" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
